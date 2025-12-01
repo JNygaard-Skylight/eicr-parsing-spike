@@ -1,0 +1,33 @@
+[project]
+name = "schematron-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+ "lxml>=6.0.2",
+ "requests>=2.32.5",
+ "tqdm>=4.67.1",
+]
+
+[tool.ruff]
+exclude = [".git", ".pytest_cache", "__pycache__", "docs"]
+line-length = 100
+indent-width = 4
+target-version = "py312"
+show-fixes = true
+fix = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+
+ignore = ["D100", "T201", "S314"]
+
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[dependency-groups]
+dev = [
+    "types-lxml>=2025.8.25",
+]
